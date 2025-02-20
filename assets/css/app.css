@@ -1,6 +1,43 @@
-@import "tailwindcss" source("../..");
+@import 'tailwindcss' source('../..');
+@source "../../deps/kindling_ui/lib/kindling_ui/components";
+@plugin "daisyui";
 
-@import "../../deps/kindling_ui/assets/css/app.css";
+@plugin "daisyui/theme" {
+  name: "abyss";
+  default: true;
+  prefersdark: true;
+  color-scheme: "dark";
+  --color-base-100: oklch(14% 0 0);
+  --color-base-200: oklch(20% 0 0);
+  --color-base-300: oklch(26% 0 0);
+  --color-base-content: oklch(98% 0 0);
+  --color-primary: oklch(50% 0.213 27.518);
+  --color-primary-content: oklch(97% 0.013 17.38);
+  --color-secondary: oklch(64% 0.222 41.116);
+  --color-secondary-content: oklch(98% 0.016 73.684);
+  --color-accent: oklch(43% 0 0);
+  --color-accent-content: oklch(98% 0 0);
+  --color-neutral: oklch(25% 0.092 26.042);
+  --color-neutral-content: oklch(93% 0.032 17.717);
+  --color-info: oklch(74% 0.16 232.661);
+  --color-info-content: oklch(29% 0.066 243.157);
+  --color-success: oklch(79% 0.209 151.711);
+  --color-success-content: oklch(26% 0.065 152.934);
+  --color-warning: oklch(84.8% 0.1962 84.62);
+  --color-warning-content: oklch(44.8% 0.1962 84.62);
+  --color-error: oklch(65% 0.1985 24.22);
+  --color-error-content: oklch(27% 0.1985 24.22);
+  --radius-selector: 2rem;
+  --radius-field: 0.25rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+@import '../../deps/kindling_ui/assets/css/app.css';
 
 /* This file is for your main application CSS */
 
@@ -11,6 +48,16 @@ html {
 
 
 input[type="radio"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: transparent;
+  /* Not removed via appearance */
+  margin: 0;
+}
+
+input[type="checkbox"] {
   /* Add if not using autoprefixer */
   -webkit-appearance: none;
   appearance: none;
