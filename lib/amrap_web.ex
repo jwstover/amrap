@@ -84,11 +84,10 @@ defmodule AmrapWeb do
     quote do
       # Translation
       use Gettext, backend: AmrapWeb.Gettext
+      use KindlingUI.Components
 
       # HTML escaping functionality
       import Phoenix.HTML
-      # Core UI components
-      import AmrapWeb.CoreComponents
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS

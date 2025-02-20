@@ -42,3 +42,30 @@ liveSocket.connect()
 // >> liveSocket.disableLatencySim()
 window.liveSocket = liveSocket
 
+
+  // daisyui: {
+  //   themes: [{
+  //     mytheme: {
+  //       "primary": "#dc2626",
+  //       "primary-content": "#f5f5f4",
+  //       "secondary": "#f97316",
+  //       "secondary-content": "#f3f4f6",
+  //       "accent": "#86efac",
+  //       "accent-content": "#001616",
+  //       "neutral": "#57534e",
+  //       "neutral-content": "#f5f5f4",
+  //       "base-100": "#000000",
+  //       "base-200": "#1c1917",
+  //       "base-300": "#292524",
+  //       "base-content": "#f5f5f4",
+  //       "info": "#60a5fa",
+  //       "info-content": "#e0f2fe",
+  //       "success": "#86efac",
+  //       "success-content": "#14532d",
+  //       "warning": "#fde68a",
+  //       "warning-content": "#78350f",
+  //       "error": "#fca5a5",
+  //       "error-content": "#7f1d1d",
+  //     },
+  //   },]
+  // },

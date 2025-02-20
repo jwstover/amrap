@@ -1,12 +1,23 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import "tailwindcss" source("../..");
+
+@import "../../deps/kindling_ui/assets/css/app.css";
 
 /* This file is for your main application CSS */
 
 html {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
+}
+
+
+input[type="radio"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: transparent;
+  /* Not removed via appearance */
+  margin: 0;
 }
 
 .pattern-boxes {
