@@ -231,7 +231,7 @@ defmodule AmrapWeb.CoreComponents do
     <button
       type={@type}
       class={[
-        "phx-submit-loading:opacity-75 rounded-lg bg-zinc-900 hover:bg-zinc-700 py-2 px-3",
+        "phx-submit-loading:opacity-75 rounded-lg bg-black border border-white/10 hover:bg-zinc-950 py-2 px-3",
         "text-sm font-semibold leading-6 text-white active:text-white/80",
         @class
       ]}
@@ -377,8 +377,8 @@ defmodule AmrapWeb.CoreComponents do
         id={@id}
         value={Phoenix.HTML.Form.normalize_value(@type, @value)}
         class={[
-          "mt-2 block w-full rounded-lg text-zinc-900 focus:ring-0 sm:text-sm sm:leading-6",
-          @errors == [] && "border-zinc-300 focus:border-zinc-400",
+          "mt-2 block w-full rounded-lg bg-zinc-950 text-zinc-100 focus:ring-0 sm:text-sm sm:leading-6 md:text-lg",
+          @errors == [] && "border-zinc-800 focus:border-zinc-700",
           @errors != [] && "border-rose-400 focus:border-rose-400"
         ]}
         {@rest}
@@ -396,7 +396,7 @@ defmodule AmrapWeb.CoreComponents do
 
   def label(assigns) do
     ~H"""
-    <label for={@for} class="block text-sm font-semibold leading-6 text-zinc-800">
+    <label for={@for} class="block font-semibold leading-6 text-zinc-400">
       {render_slot(@inner_block)}
     </label>
     """
