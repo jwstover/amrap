@@ -1,18 +1,14 @@
-defmodule AmrapWeb.RadioButtonGroup do
+defmodule AmrapWeb.InputComponents do
   @moduledoc false
 
-  use AmrapWeb, :live_component
+  use AmrapWeb, :html
 
-  def update(assigns, socket) do
-    {:ok, assign(socket, assigns) |> assign(:selected, nil)}
-  end
+  attr :id, :string, required: true
+  attr :name, :string, required: true
+  attr :options, :any, required: true
+  attr :value, :string, default: nil
 
-  def handle_event("select", %{"option" => option}, socket) do
-    selected = if socket.assigns.selected == option, do: nil, else: option
-    {:noreply, assign(socket, :selected, selected)}
-  end
-
-  def render(assigns) do
+  def radio_group(assigns) do
     ~H"""
     <div class="flex flex-wrap gap-2">
       <label
@@ -26,7 +22,7 @@ defmodule AmrapWeb.RadioButtonGroup do
           type="radio"
           name={@name}
           value={option}
-          checked={option == @selected}
+          checked={option == @value}
         />
         {option}
       </label>

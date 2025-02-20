@@ -1,5 +1,8 @@
 defmodule AmrapWeb.WodPlannerLive.Index do
   @moduledoc false
+
+  import AmrapWeb.InputComponents
+
   alias Amrap.Exercises
 
   use AmrapWeb, :live_view
@@ -22,16 +25,11 @@ defmodule AmrapWeb.WodPlannerLive.Index do
     ~H"""
     <div>
       <section class="max-w-5xl mx-auto">
-        <.header>Wod Planner</.header>
+        <.header class="mb-8">Wod Planner</.header>
 
         <.simple_form for={%{}} phx-submit="generate">
-          <.form_section title="WOD Style">
-            <.live_component
-              id="style-radio"
-              module={AmrapWeb.RadioButtonGroup}
-              name="style"
-              options={["AMRAP", "EMOM", "Chipper"]}
-            />
+          <.form_section title="Style">
+            <.radio_group id="style-radio" name="style" options={["AMRAP", "EMOM", "Chipper"]} />
           </.form_section>
 
           <.form_section title="Time Domain">
@@ -48,9 +46,8 @@ defmodule AmrapWeb.WodPlannerLive.Index do
           </.form_section>
 
           <.form_section title="Level">
-            <.live_component
+            <.radio_group
               id="level-radio"
-              module={AmrapWeb.RadioButtonGroup}
               name="level"
               options={["Beginner", "Intermmediate", "Advanced"]}
             />
@@ -89,12 +86,14 @@ defmodule AmrapWeb.WodPlannerLive.Index do
 
   def exercises(assigns) do
     ~H"""
-    <label
-      :for={exercise <- @exercises}
-      class="btn has-[:checked]:btn-primary"
-      phx-click={JS.toggle_attribute({"checked", "true"}, to: "##{exercise_id(exercise.name)}")}
-    >
-      <input id={exercise_id(exercise.name)} class="btn checked:btn-primary" type="checkbox" name="exercises[]" value={exercise.name} />
+    <label :for={exercise <- @exercises} class="btn rounded-full has-checked:btn-primary">
+      <input
+        id={exercise_id(exercise.name)}
+        class="hidden"
+        type="checkbox"
+        name="exercises[]"
+        value={exercise.name}
+      />
       {exercise.name}
     </label>
     """

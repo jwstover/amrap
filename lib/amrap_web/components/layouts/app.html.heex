@@ -1,5 +1,5 @@
 <header class="top-0 fixed w-full sm:px-6 sm:py-6 z-50">
-  <div class="navbar flex justify-between items-center bg-black bg-opacity-70  backdrop-blur-lg shadow-lg shadow-black px-4 sm:px-6 lg:px-8 py-2 lg:py-4 mx-auto max-w-7xl border-b sm:border lg:rounded-xl dark:border-white/20 justify-between">
+  <div class="navbar flex justify-between items-center bg-base-100 bg-opacity-70 backdrop-blur-lg shadow-lg border border-base-300 px-4 sm:px-6 lg:px-8 py-2 lg:py-4 mx-auto max-w-7xl  lg:rounded-xl justify-between">
     <div class="navbar-left">
       <span class="text-3xl font-bold font-[oswald]">AMRAP</span>
     </div>
@@ -7,7 +7,7 @@
 
     </div>
     <div class="navbar-end">
-      <.button class="bg-red-600 border-red-700 hover:bg-red-700 active:bg-red-800 transition-all"
+      <.button class="btn btn-primary"
       phx-click={JS.focus(to: "#notify-input")}>
         Notify Me
         <.icon name="hero-arrow-right-mini" />
@@ -15,7 +15,7 @@
     </div>
   </div>
 </header>
-<main class="mt-18 sm:mt-24 px-4 py-20 sm:px-6 lg:px-8">
+<main class="mt-18 sm:mt-24 px-4 py-20 sm:px-6 lg:px-8 min-h-screen">
   <.flash_group flash={@flash} />
   {@inner_content}
 </main>
